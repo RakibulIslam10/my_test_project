@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 void main() {
   runApp(const rakib());
 }
-
 class rakib extends StatelessWidget {
   const rakib({super.key});
 
@@ -17,7 +15,6 @@ class rakib extends StatelessWidget {
     );
   }
 }
-
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,12 +31,12 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.red,
           title: Text("Menu"),
-       actions: [
-         IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
-         IconButton(onPressed: () {}, icon: Icon(Icons.shop)),
-         IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-         IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-       ],
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.shop)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+          ],
         ),
         drawer: Drawer(),
         floatingActionButton: FloatingActionButton(
@@ -50,6 +47,13 @@ class HomeScreen extends StatelessWidget {
         ),
         body: Column(
           children: [
+            Text(
+              "Wellcom",
+              style: TextStyle(
+                fontSize: 30,
+                backgroundColor: Colors.white,
+              ),
+            ),
             Column(
               children: [
                 Center(
@@ -66,7 +70,8 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 19,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black54),
+                      color: Colors.white,
+                      backgroundColor: Colors.red),
                 )),
                 SizedBox(
                   height: 10,
@@ -74,12 +79,9 @@ class HomeScreen extends StatelessWidget {
                 Image.network(
                     height: 230,
                     width: 380,
-                    "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/280443298/original/9444e4e05462071943b8dc930e6d2853a6f005f0/create-fantastic-online-shop-logo-with-fastest-delivery.png")
-              ],
+                    "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/280443298/original/9444e4e05462071943b8dc930e6d2853a6f005f0/create-fantastic-online-shop-logo-with-fastest-delivery.png")],
             ),
           ],
-        )
-    );
-
+        ));
   }
 }
