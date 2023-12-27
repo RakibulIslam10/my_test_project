@@ -1,87 +1,83 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-void main() {
-  runApp(const rakib());
-}
-class rakib extends StatelessWidget {
-  const rakib({super.key});
+import 'package:my_test_project/WellcomePage.dart';
 
+void main() {
+  runApp(Data());
+}
+
+class Data extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Shop24",
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: MyHomePage(),
     );
   }
 }
-class HomeScreen extends StatelessWidget {
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController _name = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _phone = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.email), label: "Message"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-          ],
-        ),
-        backgroundColor: Colors.cyan,
-        appBar: AppBar(
-          backgroundColor: Colors.red,
-          title: Text("Menu"),
-          actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.shop)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-          ],
-        ),
-        drawer: Drawer(),
-        floatingActionButton: FloatingActionButton(
-          elevation: 10,
-          child: Icon(Icons.shop, color: Colors.white),
-          backgroundColor: Colors.red,
-          onPressed: () {},
-        ),
-        body: Column(
+      appBar: AppBar(
+        title: Center(child: Text("Data Passing")),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
           children: [
-            Text(
-              "Wellcom",
-              style: TextStyle(
-                fontSize: 30,
-                backgroundColor: Colors.white,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: _name,
+                decoration: (InputDecoration(
+                    hintText: "Enter your Name", border: OutlineInputBorder())),
               ),
             ),
-            Column(
-              children: [
-                Center(
-                  child: Image.network(
-                      "https://oracle.newpaltz.edu/wp-content/uploads/2012/09/Shop24.jpg"),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Center(
-                    child: Text(
-                  "Shop24 এর থেকে কেনাকাটা সবচেয়ে "
-                  "সহজে!",
-                  style: TextStyle(
-                      fontSize: 19,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      backgroundColor: Colors.red),
-                )),
-                SizedBox(
-                  height: 10,
-                ),
-                Image.network(
-                    height: 230,
-                    width: 380,
-                    "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/280443298/original/9444e4e05462071943b8dc930e6d2853a6f005f0/create-fantastic-online-shop-logo-with-fastest-delivery.png")],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: _email,
+                decoration: (InputDecoration(
+                    hintText: "Enter your email",
+                    border: OutlineInputBorder())),
+              ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                controller: _phone,
+                decoration: (InputDecoration(
+                    hintText: "Enter your phone",
+                    border: OutlineInputBorder())),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => WellcomePage(
+                          name: _name.text,
+                          email: _email.text,
+                          phone: _phone.text)));
+                },
+                child: Text("Go to Next Page"))
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
