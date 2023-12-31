@@ -51,7 +51,7 @@ class apple extends StatelessWidget {
       "name": "Pineapple",
       "category": "Mobile",
       "price": 449.99,
-      "image": "https://www.healthxchange.sg/sites/hexassets/Assets/food-nutrition/pineapple-health-benefits-and-ways-to-enjoy.jpg"
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSjD-9pcX2FVMxnOLFKCw6Rh0-ZEV0e8s4Hx_lnOTlhsvQTLd63"
     },
     {
       "name": "Mango",

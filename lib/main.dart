@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'Frots.dart';
 import 'Gaget.dart';
 import 'Medicine.dart';
+import 'search.dart';
 import 'vagetable.dart';
 
 void main(){
@@ -27,17 +28,19 @@ return DefaultTabController(
   length: 4,
   child: Scaffold(
     floatingActionButton: FloatingActionButton(
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.green,
       onPressed: () {},
       child: Icon(Icons.store),
     ),
     appBar: AppBar(
-      backgroundColor: Colors.pinkAccent,
+      backgroundColor: Colors.teal,
       title: Center(child: Text("My Market",style: TextStyle(fontSize: 25,),)),
 
       actions: [
-        IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+        IconButton(onPressed: () =>showSearch(context: context, delegate: search()), icon: Icon(Icons.search)),
       IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
+        IconButton(onPressed: (){}, icon: Icon(Icons.more_vert)),
+
       ],
 
       bottom: TabBar(
@@ -75,7 +78,7 @@ return DefaultTabController(
                     )
                   ],
                 ),
-                color: Colors.pink,
+                color: Colors.teal,
               ),
             ),
             ListTile(
@@ -132,7 +135,7 @@ return DefaultTabController(
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.pink,
+                      backgroundColor: Colors.teal,
                     ),
                     child: Text("Exit"),
                   ),
@@ -149,14 +152,17 @@ return DefaultTabController(
 
     ]),
     bottomNavigationBar: BottomNavigationBar(
-
-      selectedItemColor: Colors.pink,
+ type: BottomNavigationBarType.fixed,
+      backgroundColor: Colors.blueGrey,
+      iconSize: 28,
+showUnselectedLabels: true,
+      selectedItemColor: Colors.greenAccent,
       // Set your desired color for the selected item
-      unselectedItemColor: Colors.teal,
+      unselectedItemColor: Colors.white,
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.email),label: "Message"),
-        BottomNavigationBarItem(icon: Icon(Icons.notifications_active),label: "Notification"),
+        BottomNavigationBarItem(icon: Icon(Icons.home,),label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.favorite_border),label: "Favorite"),
+        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: "Notification"),
         BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile"),
       ],),
 
