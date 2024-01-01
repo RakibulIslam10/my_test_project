@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class fristpage extends StatelessWidget {
-  const fristpage({super.key});
+class secoundpage extends StatelessWidget {
+  const secoundpage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-        "Wellcome to frist page",
+    return  Text(
+        "This is Secound page",
         style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
       );
   }
