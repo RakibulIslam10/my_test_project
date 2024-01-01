@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class search extends SearchDelegate{
+class search extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
-return <Widget>[IconButton(onPressed: (){}, icon: Icon(Icons.clear))];
+    return <Widget>[IconButton(onPressed: () {}, icon: Icon(Icons.clear))];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
-return IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios));
+    return IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios));
   }
 
   @override
@@ -18,7 +18,6 @@ return IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios));
 
   @override
   Widget buildSuggestions(BuildContext context) {
-return Text("");
+    return Text("");
   }
-
 }

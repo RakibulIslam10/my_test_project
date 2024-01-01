@@ -65,9 +65,7 @@ class headphone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body:GridView.builder(
+    return GridView.builder(
         padding: EdgeInsets.only(top: 22),
         gridDelegate: (SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,crossAxisSpacing:0)),
@@ -109,8 +107,8 @@ class headphone extends StatelessWidget {
                 Colors.green),)
             ],),
           );
-        },),
+        },);
 
-    );
+
   }
 }
