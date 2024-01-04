@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Frots.dart';
@@ -45,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.green,
           onPressed: () {},
-          child: Icon(Icons.store),
+          child: Icon(CupertinoIcons.add_circled_solid),
         ),
         appBar: AppBar(
           backgroundColor: Colors.teal,
@@ -60,26 +61,26 @@ class _HomeScreenState extends State<HomeScreen> {
             IconButton(
                 onPressed: () =>
                     showSearch(context: context, delegate: search()),
-                icon: Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+                icon: Icon(CupertinoIcons.search)),
+            IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.settings)),
+            IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.ellipsis_vertical)),
           ],
           bottom:
               TabBar(labelPadding: EdgeInsets.symmetric(vertical: 2), tabs: [
             Tab(
-              icon: Icon(Icons.shopify_rounded),
+              icon: Icon(CupertinoIcons.shopping_cart),
               text: "Fruits",
             ),
             Tab(
-              icon: Icon(Icons.shopping_cart),
+              icon: Icon(CupertinoIcons.cart_fill),
               text: "Vagetable",
             ),
             Tab(
-              icon: Icon(Icons.shop),
+              icon: Icon(CupertinoIcons.cart_badge_plus),
               text: "Medicine",
             ),
             Tab(
-              icon: Icon(Icons.shopping_basket_rounded),
+              icon: Icon(CupertinoIcons.cart_fill_badge_plus),
               text: "Gaget",
             ),
           ]),
@@ -198,14 +199,14 @@ body: MyPage[myallPagelist],
           items: [
             BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.home,
+                 CupertinoIcons.house_fill
                 ),
                 label: "Home"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border), label: "Favorite"),
+                icon: Icon(CupertinoIcons.heart), label: "Favorite"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.notifications_active), label: "Notification"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+                icon: Icon(CupertinoIcons.bell), label: "Notification"),
+            BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_crop_square_fill), label: "Profile"),
           ],
         ),
       ),

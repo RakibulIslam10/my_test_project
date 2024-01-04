@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'search.dart';
+
 class profilepage extends StatelessWidget {
   const profilepage({super.key});
 
@@ -8,12 +10,29 @@ class profilepage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      appBar: AppBar(
+        title: Center(
+            child: Text(
+              "My Market",
+              style: TextStyle(
+                fontSize: 25,
+              ),
+            )),
+        actions: [
+          IconButton(
+              onPressed: () =>
+                  showSearch(context: context, delegate: search()),
+              icon: Icon(CupertinoIcons.search)),
+          IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.settings)),
+          IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.ellipsis_vertical )),
+        ],
+        backgroundColor: Colors.teal,),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Column(
               children: [
-                const SizedBox(height: 70,),
+                const SizedBox(height: 30,),
 
                 const CircleAvatar(
                     radius: 70,
