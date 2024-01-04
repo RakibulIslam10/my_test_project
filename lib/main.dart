@@ -43,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.green,
           onPressed: () {},
@@ -52,11 +53,11 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.teal,
           title: Center(
               child: Text(
-            "My Market",
-            style: TextStyle(
-              fontSize: 25,
-            ),
-          )),
+                "My Market",
+                style: TextStyle(
+                  fontSize: 25,
+                ),
+              )),
           actions: [
             IconButton(
                 onPressed: () =>
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
             IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.ellipsis_vertical)),
           ],
           bottom:
-              TabBar(labelPadding: EdgeInsets.symmetric(vertical: 2), tabs: [
+          TabBar(labelPadding: EdgeInsets.symmetric(vertical: 2), tabs: [
             Tab(
               icon: Icon(CupertinoIcons.shopping_cart),
               text: "Fruits",
@@ -87,96 +88,103 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         drawer: Drawer(
             child: ListView(
-          children: [
-            DrawerHeader(
-              padding: EdgeInsets.all(0),
-              child: Container(
-                child: Column(
-                  children: [
-                    SizedBox(
-                        height: 110,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 15.0),
-                          child: Image.network(
-                            "https://cdn-icons-png.flaticon.com/256/9368/9368192.png",
+              children: [
+                DrawerHeader(
+                  padding: EdgeInsets.all(0),
+                  child: Container(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                            height: 110,
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 15.0),
+                              child: Image.network(
+                                "https://cdn-icons-png.flaticon.com/256/9368/9368192.png",
+                              ),
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "👋 Hey there!",
+                            style: TextStyle(fontSize: 25, color: Colors.white),
                           ),
-                        )),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "👋 Hey there!",
-                        style: TextStyle(fontSize: 25, color: Colors.white),
-                      ),
-                    )
-                  ],
-                ),
-                color: Colors.teal,
-              ),
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.house_fill),
-              title: Text("Home"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.person_crop_square_fill),
-              title: Text("Profile"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.settings_solid),
-              title: Text("Setting"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.share_solid),
-              title: Text("Share"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.star_fill),
-              title: Text("Rate App"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.mail_solid),
-              title: Text("Contact Us"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.lock_fill),
-              title: Text("Privacy Policy"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.lightbulb_fill),
-              title: Text("Dark Mode"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text("Exit"),
-              onTap: () {},
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 120.0),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 48.0),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: .0),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal,
+                        )
+                      ],
                     ),
-                    child: Text("Exit"),
+                    color: Colors.teal,
                   ),
                 ),
-              ),
-            )
+                ListTile(
+                  leading: Icon(CupertinoIcons.house_fill),
+                  title: Text("Home"),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(CupertinoIcons.person_crop_square_fill),
+                  title: Text("Profile"),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(CupertinoIcons.settings_solid),
+                  title: Text("Setting"),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(CupertinoIcons.share_solid),
+                  title: Text("Share"),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(CupertinoIcons.star_fill),
+                  title: Text("Rate App"),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(CupertinoIcons.mail_solid),
+                  title: Text("Contact Us"),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(CupertinoIcons.lock_fill),
+                  title: Text("Privacy Policy"),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(CupertinoIcons.lightbulb_fill),
+                  title: Text("Dark Mode"),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(Icons.exit_to_app),
+                  title: Text("Exit"),
+                  onTap: () {},
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 120.0),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 48.0),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: .0),
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal,
+                        ),
+                        child: Text("Exit"),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            )),
+        body: TabBarView(
+          children: [
+            apple(),
+            potato(),
+            napa(),
+            headphone(),
           ],
-        )),
-body: MyPage[myallPagelist],
+        ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           onTap: (value) {
@@ -199,7 +207,7 @@ body: MyPage[myallPagelist],
           items: [
             BottomNavigationBarItem(
                 icon: Icon(
-                 CupertinoIcons.house_fill
+                    CupertinoIcons.house_fill
                 ),
                 label: "Home"),
             BottomNavigationBarItem(

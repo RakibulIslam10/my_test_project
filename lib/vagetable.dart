@@ -69,50 +69,52 @@ class potato extends StatelessWidget {
   Widget build(BuildContext context) {
     return
       GridView.builder(
-        padding: EdgeInsets.only(top: 22),
+        padding: const EdgeInsets.only(top: 22),
         gridDelegate: (SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, crossAxisSpacing: 0)),
         itemCount: MyItems.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-            child: Column(
-              children: [
-                Expanded(
-                    child: Image.network(MyItems[index]["image"].toString())),
-                Text(MyItems[index]["name"].toString()),
-                Text(
-                  MyItems[index]["price"].toString(),
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text("We are sorry!"),
-                            content: Text("This product not available😔"),
-                            actions: [
-                              TextButton(
-                                  onPressed: () {
-                                    MySnacbar("Thank you ", context);
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text("Okay")),
-                              TextButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text("Close")),
-                            ],
-                          );
-                        });
-                  },
-                  child: Text("Buy"),
-                  style: ElevatedButton.styleFrom(
-                      minimumSize: Size(0, 30), backgroundColor: Colors.green),
-                )
-              ],
+            child: Card(
+              child: Column(
+                children: [
+                  Expanded(
+                      child: Image.network(MyItems[index]["image"].toString())),
+                  Text(MyItems[index]["name"].toString()),
+                  Text(
+                    MyItems[index]["price"].toString(),
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text("We are sorry!"),
+                              content: Text("This product not available😔"),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      MySnacbar("Thank you ", context);
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text("Okay")),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text("Close")),
+                              ],
+                            );
+                          });
+                    },
+                    child: Text("Buy"),
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: Size(0, 30), backgroundColor: Colors.green),
+                  )
+                ],
+              ),
             ),
           );
         },

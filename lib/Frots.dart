@@ -67,14 +67,14 @@ class apple extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      GridView.builder(
-        padding: EdgeInsets.only(top: 22),
-        gridDelegate: (SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 0)),
-        itemCount: MyItems.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
+    return GridView.builder(
+      padding: EdgeInsets.only(top: 22),
+      gridDelegate: (SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, crossAxisSpacing: 0)),
+      itemCount: MyItems.length,
+      itemBuilder: (context, index) {
+        return Card(
+          child: GestureDetector(
             child: Column(
               children: [
                 Expanded(
@@ -84,39 +84,48 @@ class apple extends StatelessWidget {
                   MyItems[index]["price"].toString(),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text("We are sorry!"),
-                            content: Text("This product not available😔"),
-                            actions: [
-                              TextButton(
-                                  onPressed: () {
-                                    MySnacbar("Thank you ", context);
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text("Okay")),
-                              TextButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text("Close")),
-                            ],
-                          );
-                        });
-                  },
-                  child: Text("Buy"),
-                  style: ElevatedButton.styleFrom(
-                      minimumSize: Size(0, 30), backgroundColor: Colors.green),
+                Padding(
+                  padding: const EdgeInsets.only(left: 118.0),
+                  child: OutlinedButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text("We are sorry!"),
+                              content: Text("This product not available😔"),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      MySnacbar("Thank you ", context);
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text("Okay")),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text("Close")),
+                              ],
+                            );
+                          });
+                    },
+                    child: Text(
+                      "Buy",
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.red,
+                    ),
+                  ),
                 )
               ],
             ),
-          );
-        },
-      );
-
+          ),
+        );
+      },
+    );
   }
 }
