@@ -73,7 +73,7 @@ class apple extends StatelessWidget {
           crossAxisCount: 2, crossAxisSpacing: 0)),
       itemCount: MyItems.length,
       itemBuilder: (context, index) {
-        return Card(
+        return Card(elevation: 3,
           child: GestureDetector(
             child: Column(
               children: [
@@ -84,43 +84,40 @@ class apple extends StatelessWidget {
                   MyItems[index]["price"].toString(),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 118.0),
-                  child: OutlinedButton(
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              title: Text("We are sorry!"),
-                              content: Text("This product not available😔"),
-                              actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      MySnacbar("Thank you ", context);
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text("Okay")),
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text("Close")),
-                              ],
-                            );
-                          });
-                    },
-                    child: Text(
-                      "Buy",
-                      style: TextStyle(
-                        fontSize: 15,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.red,
+                OutlinedButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text("We are sorry!"),
+                            content: Text("This product not available😔"),
+                            actions: [
+                              TextButton(
+                                  onPressed: () {
+                                    MySnacbar("Thank you ", context);
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text("Okay")),
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text("Close")),
+                            ],
+                          );
+                        });
+                  },
+                  child: Text(
+                    "Buy",
+                    style: TextStyle(
+                      fontSize: 15,
                     ),
                   ),
-                )
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.red,
+                  ),
+                ),
               ],
             ),
           ),

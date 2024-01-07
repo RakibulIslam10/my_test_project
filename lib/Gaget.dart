@@ -72,7 +72,7 @@ class headphone extends StatelessWidget {
         itemCount: MyItems.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-            child: Card(
+            child: Card(elevation: 3,
               child: Column(children: [
                 Expanded(
                     child: Image.network(MyItems[index]["image"].toString())),
@@ -81,7 +81,7 @@ class headphone extends StatelessWidget {
 
                 Text(MyItems[index]["price"].toString(),
                   style: TextStyle(fontWeight: FontWeight.bold),),
-                ElevatedButton(onPressed: (){
+                OutlinedButton(onPressed: (){
                   showDialog(
                       context: context,
                       builder: (context) {
@@ -104,8 +104,9 @@ class headphone extends StatelessWidget {
                         );
                       });
                 }, child: Text("Buy"),
-                  style: ElevatedButton.styleFrom(minimumSize: Size(0, 30),backgroundColor:
-                  Colors.green),)
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.red,
+                      minimumSize: Size(0, 30),),)
               ],),
             ),
           );

@@ -75,7 +75,7 @@ class potato extends StatelessWidget {
         itemCount: MyItems.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-            child: Card(
+            child: Card(elevation: 3,
               child: Column(
                 children: [
                   Expanded(
@@ -85,7 +85,7 @@ class potato extends StatelessWidget {
                     MyItems[index]["price"].toString(),
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  ElevatedButton(
+                  OutlinedButton(
                     onPressed: () {
                       showDialog(
                           context: context,
@@ -110,8 +110,8 @@ class potato extends StatelessWidget {
                           });
                     },
                     child: Text("Buy"),
-                    style: ElevatedButton.styleFrom(
-                        minimumSize: Size(0, 30), backgroundColor: Colors.green),
+                    style: ElevatedButton.styleFrom(foregroundColor: Colors.red,
+                        minimumSize: Size(0, 30),),
                   )
                 ],
               ),

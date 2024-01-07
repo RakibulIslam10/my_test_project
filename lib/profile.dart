@@ -12,10 +12,12 @@ class profilepage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-            child: Text(
-              "My Market",
-              style: TextStyle(
-                fontSize: 25,
+            child: Center(
+              child: Text(
+                "My Profile",
+                style: TextStyle(
+                  fontSize: 25,
+                ),
               ),
             )),
         actions: [

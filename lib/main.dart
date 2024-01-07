@@ -8,6 +8,7 @@ import 'Medicine.dart';
 import 'favorite.dart';
 
 import 'notifi.dart';
+import 'popmenupage.dart';
 import 'profile.dart';
 import 'search.dart';
 import 'vagetable.dart';
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     showSearch(context: context, delegate: search()),
                 icon: Icon(CupertinoIcons.search)),
             IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.settings)),
-            IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.ellipsis_vertical)),
+            Mypop()
           ],
           bottom:
           TabBar(labelPadding: EdgeInsets.symmetric(vertical: 2), tabs: [
